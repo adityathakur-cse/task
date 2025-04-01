@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  
+  <body>
+    <div class="h-12 bg-pink-700 text-white text-xl flex items-center justify-center gap-7 p-2">
+            <p class="hover:underline underline-offset-6"><a href="#home">Home</a></p>
+            <p class="hover:underline underline-offset-6"><a href="#about">About</a></p>
+            <p class="hover:underline underline-offset-6" id="contact"><a href="#contact">Contact</a></p>
+    </div>
+    <div id="form" class="flex items-center justify-center hidden">
+      <div class="bg-gradient-to-br from-pink-200 to-pink-800 w-96 m-4 p-6 rounded-xl shadow-pink-300 shadow-xl">
+          <div class="flex flex-col gap-3">
+              <label class="text-black text-lg font-semibold">Name:</label>
+              <input type="text" id="nameInput" class="border-2 border-white p-2 rounded-lg bg-transparent text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500">
+          </div>
+          <button id="submitBtn" class="w-full mt-4 p-3 bg-gradient-to-r from-blue-500 to-purple-700 text-white text-lg font-semibold rounded-lg hover:from-blue-500 hover:to-purple-500 active:scale-95 transition-all">
+              Submit
+          </button>
+      </div>
+  </div>
+    <div class="flex items-center justify-center ">
+        <div class="size-full p-2 h-100 m-2">
+            <img src="https://english.cdn.zeenews.com/sites/default/files/2025/03/29/1712743-modi-8.jpg" class="rounded-lg">
+        </div>
+        <div class="size-full text-center border-l-4 border-pink-500">
+            <a class="underline decoration-pink-500 underline-offset-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.</a>
+        </div>
+    </div>
+    <div class="flex ml-2 gap-2">
+        <p class="border-l-4 border-pink-500 p-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p class="border-l-4 border-pink-500 p-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p class="border-l-4 border-pink-500 p-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p class="border-l-4 border-pink-500 p-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+    <script>
+        let contact = document.getElementById("contact");
+        contact.addEventListener("click", toogle); 
+        function toogle() {
+          let form = document.getElementById("form");
+          if (form.classList.contains("hidden")) {
+              form.classList.remove("hidden");
+          } else {
+              form.classList.add("hidden");
+          }
+        }
+
+        submitBtn.addEventListener("click", function () {
+            let nameInput = document.getElementById("nameInput").value;
+            if (nameInput.trim() === "") {
+                alert("Please enter your name before submitting.");
+            } else {
+                alert("Submitted successfully!");
+                window.location.href = "activity9.html";
+            }
+        });
+    </script>
+    </body>
+</html>
